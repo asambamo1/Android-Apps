@@ -32,5 +32,7 @@
 	<string name="title_activity_about">About</string>
 
 	<string name="save_call">Save Call</string>
-	
+
+    <!-- Menu icons -->
+    <string name="settings">Settings</string>
 </resources>

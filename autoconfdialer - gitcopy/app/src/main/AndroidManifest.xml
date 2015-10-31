@@ -30,6 +30,13 @@
         <activity
             android:name=".CallDetailsActivity"
             android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activities.SettingsActivity"
+            android:label="@string/settings"/>
+        <activity
+            android:name=".Activities.AboutMeActivity"
+            android:label="@string/about_me_label">
+        </activity>
 
         <service
             android:name=".CallSchedulerService"

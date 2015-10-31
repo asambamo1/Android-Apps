@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
+import com.smartlifedigital.autodialer.Activities.SettingsActivity;
+
 import java.sql.Date;
 
 import butterknife.Bind;
@@ -129,13 +131,12 @@ public class CallListActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_add_new_call: {
                 startcallDetailsActivity(-1);
-                break;
+                return true;
             }
-            case R.id.action_info: {
-                Intent intent = new Intent(CallListActivity.this, About.class);
+            case R.id.settings: {
+                Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
-                break;
-
+                return true;
             }
         }
         return super.onOptionsItemSelected(item);
