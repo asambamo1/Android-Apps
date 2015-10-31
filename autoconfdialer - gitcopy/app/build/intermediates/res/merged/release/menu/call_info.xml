@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_info"
+        android:title="About"
+        android:orderInCategory="200"
+        android:icon="@drawable/ic_menu_info_details"
+        android:showAsAction="always"/>
+
+</menu>
+<!-- From: file:/C:/Users/Aravind/Desktop/my%20files/AutoDialerFinal/autoconfdialer%20-%20github/app/src/main/res/menu/call_info.xml -->
