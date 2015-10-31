@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.smartlifedigital.autodialer"
-    android:versionCode="1"
-    android:versionName="1.0" >
-
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="18" />
+    package="com.smartlifedigital.autodialer">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -21,7 +15,7 @@
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/App" >
         <activity
             android:name=".CallListActivity"
             android:label="@string/app_name" >
@@ -32,12 +26,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".CallReminderScreen"
-            android:theme="@style/AppBase"
             android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".CallDetailsActivity"
-            android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activities.SettingsActivity"
+            android:label="@string/settings"/>
+        <activity
+            android:name=".Activities.AboutMeActivity"
+            android:label="@string/about_me_label">
+        </activity>
 
         <service
             android:name=".CallSchedulerService"
@@ -49,10 +48,6 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name=".SetCalls"
-            android:label="@string/title_activity_activity_set_calls" >
-        </activity>
         <activity
             android:name=".About"
             android:label="@string/title_activity_about" >

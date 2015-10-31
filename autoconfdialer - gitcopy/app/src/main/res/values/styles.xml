@@ -39,6 +39,14 @@
 		<item name="android:background">?android:attr/listDivider</item>
 	</style>
 
+    <style name="switch_style">
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
 
-
+    <style name="switch_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
 </resources>

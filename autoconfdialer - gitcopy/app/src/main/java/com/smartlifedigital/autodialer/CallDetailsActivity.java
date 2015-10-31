@@ -1,85 +1,63 @@
 package com.smartlifedigital.autodialer;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
-public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
-	
+import com.rey.material.widget.Switch;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class CallDetailsActivity extends AppCompatActivity {
 	private Database dbHelper = new Database(this);
 	
 	private Model callDetails;
 	
 	private TimePicker timePicker;
 	private EditText edtName, edtNumber;
-	private CustomSwitch chkWeekly;
-	private CustomSwitch chkSunday;
-	private CustomSwitch chkMonday;
-	private CustomSwitch chkTuesday;
-	private CustomSwitch chkWednesday;
-	private CustomSwitch chkThursday;
-	private CustomSwitch chkFriday;
-	private CustomSwitch chkSaturday;
-	private TextView txtToneSelection, t2;
-	
+	@Bind(R.id.call_details_repeat_weekly) Switch chkWeekly;
+	@Bind(R.id.call_details_repeat_sunday) Switch chkSunday;
+	@Bind(R.id.call_details_repeat_monday) Switch chkMonday;
+	@Bind(R.id.call_details_repeat_tuesday) Switch chkTuesday;
+	@Bind(R.id.call_details_repeat_wednesday) Switch chkWednesday;
+	@Bind(R.id.call_details_repeat_thursday) Switch chkThursday;
+	@Bind(R.id.call_details_repeat_friday) Switch chkFriday;
+	@Bind(R.id.call_details_repeat_saturday) Switch chkSaturday;
+	@Bind(R.id.call_label_tone_selection) TextView txtToneSelection;
+    @Bind(R.id.textView2) TextView t2;
+    @Bind(R.id.coordinator_layout) CoordinatorLayout snackbar;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		//supportRequestWindowFeature(Window.FEATURE_ACTION_BAR);
-		requestWindowFeature(Window.FEATURE_ACTION_BAR);
-
 		setContentView(R.layout.activity_details);
+        ButterKnife.bind(this);
 
-		/*getSupportActionBar().setTitle("Schedule a Call");
+		getSupportActionBar().setTitle("Schedule a Call");
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		android.support.v7.app.ActionBar bar = getSupportActionBar();
-		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));*/
-
-		getActionBar().setTitle("Schedule a Call");
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		ActionBar bar = getActionBar();
-		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
-
-
-
 
 		timePicker = (TimePicker) findViewById(R.id.call_details_time_picker);
 		edtName = (EditText) findViewById(R.id.call_details_name);
 		edtNumber = (EditText) findViewById(R.id.autodial_number);
-		chkWeekly = (CustomSwitch) findViewById(R.id.call_details_repeat_weekly);
-		chkSunday = (CustomSwitch) findViewById(R.id.call_details_repeat_sunday);
-		chkMonday = (CustomSwitch) findViewById(R.id.call_details_repeat_monday);
-		chkTuesday = (CustomSwitch) findViewById(R.id.call_details_repeat_tuesday);
-		chkWednesday = (CustomSwitch) findViewById(R.id.call_details_repeat_wednesday);
-		chkThursday = (CustomSwitch) findViewById(R.id.call_details_repeat_thursday);
-		chkFriday = (CustomSwitch) findViewById(R.id.call_details_repeat_friday);
-		chkSaturday = (CustomSwitch) findViewById(R.id.call_details_repeat_saturday);
-		txtToneSelection = (TextView) findViewById(R.id.call_label_tone_selection);
-		t2 = (TextView)findViewById(R.id.textView2);
 
-		
 		long id = getIntent().getExtras().getLong("id");
 		
 		if (id == -1) {
@@ -123,10 +101,6 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 				Intent pickContactIntent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
 				pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE); // Show user only contacts w/ phone numbers
 				startActivityForResult(pickContactIntent, 1);
-
-
-
-
 			}
 		});
 	}
@@ -175,71 +149,44 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 	public void showSelectedNumber(int type, String number) {
 			edtNumber.setText(number);
 	}
-	
+
+    @OnClick(R.id.save_call)
+    public void saveCall(View button) {
+        t2.setText(edtNumber.getText().toString());
+        if (t2 == null || t2.getText().toString().length() < 1) {
+            Snackbar.make(snackbar, "Please enter a phone number first!", Snackbar.LENGTH_LONG).show();
+        }
+        else if (t2.getText().toString().trim().startsWith("911")){
+            Snackbar.make(snackbar, "911 calls are not allowed!", Snackbar.LENGTH_LONG).show();
+        }
+        else {
+            updateModelFromLayout();
+            CallManagerHelper.cancelcalls(this);
+            if (callDetails.id < 0) {
+                dbHelper.createcall(callDetails);
+            } else {
+                dbHelper.updatecall(callDetails);
+            }
+            CallManagerHelper.setcalls(this);
+            setResult(RESULT_OK);
+            finish();
+        }
+    }
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.call_details, menu);
+		getMenuInflater().inflate(R.menu.blank_menu, menu);
 		return true;
 	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
 		switch (item.getItemId()) {
 			case android.R.id.home: {
 				finish();
 				break;
 			}
-			case R.id.action_save_call_details: {
-				t2.setText(edtNumber.getText().toString());
-				if (t2 == null || t2.getText().toString().length() < 1) {
-					View view = findViewById(android.R.id.content);
-					//Snackbar.make(view, "Please Enter a Phone Number First!", Snackbar.LENGTH_LONG).show();
-					  Toast.makeText(getApplicationContext(),
-							"Please Enter a Phone Number First!", Toast.LENGTH_SHORT)
-							.show();
-				} else if (t2.getText().toString().startsWith("911")){
-					View view = findViewById(android.R.id.content);
-					//Snackbar.make(view, "911 Calls are not allowed!", Snackbar.LENGTH_LONG).show();
-					  Toast.makeText(getApplicationContext(),
-							"911 Calls are not allowed!", Toast.LENGTH_SHORT)
-							.show();
-				}
-
-				else if(t2.getText().toString().contains(" 911")){
-					View view = findViewById(android.R.id.content);
-					//Snackbar.make(view, "911 Calls are not allowed!", Snackbar.LENGTH_LONG).show();
-					  Toast.makeText(getApplicationContext(),
-							"911 Calls are not allowed!", Toast.LENGTH_SHORT)
-							.show();
-				}
-
-				else{
-
-					updateModelFromLayout();
-
-					CallManagerHelper.cancelcalls(this);
-
-
-					if (callDetails.id < 0) {
-						dbHelper.createcall(callDetails);
-					} else {
-						dbHelper.updatecall(callDetails);
-					}
-
-
-					CallManagerHelper.setcalls(this);
-
-					setResult(RESULT_OK);
-					finish();
-
-				}
-
-
-			}
-
 		}
-
 		return super.onOptionsItemSelected(item);
 	}
 	
@@ -258,6 +205,4 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 		callDetails.setRepeatingDay(Model.SATURDAY, chkSaturday.isChecked());
 		callDetails.isEnabled = true;
 	}
-
-
 }

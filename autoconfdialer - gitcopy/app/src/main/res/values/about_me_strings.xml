@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_me_label">About me</string>
+    <string name="connect">Connect with me</string>
+    <string name="linkedin_icon">fa-linkedin-square</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="github">GitHub</string>
+
+    <string name="about_me_summary">Hey there, I\'m Aravind!
+        I want a job!
+    </string>
+</resources>
