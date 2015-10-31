@@ -85,10 +85,8 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="@string/details_repeat_weekly"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"/>
+                    style="@style/switch_text_style"
+                    android:text="@string/details_repeat_weekly" />
 
                 <com.rey.material.widget.Switch
                     style="@style/Material.Widget.Switch"
@@ -119,10 +117,8 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="@string/details_sunday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"/>
+                        style="@style/switch_text_style"
+                        android:text="@string/details_sunday"/>
 
                     <com.rey.material.widget.Switch
                         style="@style/Material.Widget.Switch"
@@ -135,16 +131,16 @@
                         android:checked="false"/>
                 </FrameLayout>
 
+                <View style="@style/Divider" />
+
                 <FrameLayout
                     style="@style/switch_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="@string/details_monday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"/>
+                        style="@style/switch_text_style"
+                        android:text="@string/details_monday"/>
 
                     <com.rey.material.widget.Switch
                         style="@style/Material.Widget.Switch"
@@ -157,16 +153,16 @@
                         android:checked="false"/>
                 </FrameLayout>
 
+                <View style="@style/Divider" />
+
                 <FrameLayout
                     style="@style/switch_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="@string/details_tuesday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"/>
+                        style="@style/switch_text_style"
+                        android:text="@string/details_tuesday"/>
 
                     <com.rey.material.widget.Switch
                         style="@style/Material.Widget.Switch"
@@ -179,16 +175,16 @@
                         android:checked="false"/>
                 </FrameLayout>
 
+                <View style="@style/Divider" />
+
                 <FrameLayout
                     style="@style/switch_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="@string/details_wednesday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"/>
+                        style="@style/switch_text_style"
+                        android:text="@string/details_wednesday"/>
 
                     <com.rey.material.widget.Switch
                         style="@style/Material.Widget.Switch"
@@ -201,16 +197,16 @@
                         android:checked="false"/>
                 </FrameLayout>
 
+                <View style="@style/Divider" />
+
                 <FrameLayout
                     style="@style/switch_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="@string/details_thursday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"/>
+                        style="@style/switch_text_style"
+                        android:text="@string/details_thursday"/>
 
                     <com.rey.material.widget.Switch
                         style="@style/Material.Widget.Switch"
@@ -223,16 +219,16 @@
                         android:checked="false"/>
                 </FrameLayout>
 
+                <View style="@style/Divider" />
+
                 <FrameLayout
                     style="@style/switch_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="@string/details_friday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"/>
+                        style="@style/switch_text_style"
+                        android:text="@string/details_friday"/>
 
                     <com.rey.material.widget.Switch
                         style="@style/Material.Widget.Switch"
@@ -245,16 +241,16 @@
                         android:checked="false"/>
                 </FrameLayout>
 
+                <View style="@style/Divider" />
+
                 <FrameLayout
                     style="@style/switch_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="@string/details_saturday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"/>
+                        style="@style/switch_text_style"
+                        android:text="@string/details_saturday" />
 
                     <com.rey.material.widget.Switch
                         style="@style/Material.Widget.Switch"
