@@ -29,6 +29,8 @@
 	<string name="hello_world3">
 		The On and Off button can be used to turn on and off a call. The call now button allows you to dial the number. Disclaimer: This app cannot dial 911! <now class=""></now>
 	</string>
-<string name="title_activity_about">About</string>
+	<string name="title_activity_about">About</string>
+
+	<string name="save_call">Save Call</string>
 	
 </resources>

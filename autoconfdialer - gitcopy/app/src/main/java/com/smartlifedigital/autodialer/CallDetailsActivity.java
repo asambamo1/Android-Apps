@@ -6,6 +6,8 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,8 +20,11 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class CallDetailsActivity extends AppCompatActivity {
-	
 	private Database dbHelper = new Database(this);
 	
 	private Model callDetails;
@@ -35,12 +40,14 @@ public class CallDetailsActivity extends AppCompatActivity {
 	private CustomSwitch chkFriday;
 	private CustomSwitch chkSaturday;
 	private TextView txtToneSelection, t2;
+    @Bind(R.id.coordinator_layout) CoordinatorLayout snackbar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_details);
+        ButterKnife.bind(this);
 
 		getSupportActionBar().setTitle("Schedule a Call");
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -150,10 +157,33 @@ public class CallDetailsActivity extends AppCompatActivity {
 	public void showSelectedNumber(int type, String number) {
 			edtNumber.setText(number);
 	}
-	
+
+    @OnClick(R.id.save_call)
+    public void saveCall(View button) {
+        t2.setText(edtNumber.getText().toString());
+        if (t2 == null || t2.getText().toString().length() < 1) {
+            Snackbar.make(snackbar, "Please enter a phone number first!", Snackbar.LENGTH_LONG).show();
+        }
+        else if (t2.getText().toString().trim().startsWith("911")){
+            Snackbar.make(snackbar, "911 calls are not allowed!", Snackbar.LENGTH_LONG).show();
+        }
+        else {
+            updateModelFromLayout();
+            CallManagerHelper.cancelcalls(this);
+            if (callDetails.id < 0) {
+                dbHelper.createcall(callDetails);
+            } else {
+                dbHelper.updatecall(callDetails);
+            }
+            CallManagerHelper.setcalls(this);
+            setResult(RESULT_OK);
+            finish();
+        }
+    }
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.call_details, menu);
+		getMenuInflater().inflate(R.menu.blank_menu, menu);
 		return true;
 	}
 	
@@ -163,49 +193,6 @@ public class CallDetailsActivity extends AppCompatActivity {
 			case android.R.id.home: {
 				finish();
 				break;
-			}
-			case R.id.action_save_call_details: {
-				t2.setText(edtNumber.getText().toString());
-				if (t2 == null || t2.getText().toString().length() < 1) {
-					View view = findViewById(android.R.id.content);
-					//Snackbar.make(view, "Please Enter a Phone Number First!", Snackbar.LENGTH_LONG).show();
-					  Toast.makeText(getApplicationContext(),
-							"Please Enter a Phone Number First!", Toast.LENGTH_SHORT)
-							.show();
-				} else if (t2.getText().toString().startsWith("911")){
-					View view = findViewById(android.R.id.content);
-					//Snackbar.make(view, "911 Calls are not allowed!", Snackbar.LENGTH_LONG).show();
-					  Toast.makeText(getApplicationContext(),
-							"911 Calls are not allowed!", Toast.LENGTH_SHORT)
-							.show();
-				}
-
-				else if(t2.getText().toString().contains(" 911")){
-					View view = findViewById(android.R.id.content);
-					//Snackbar.make(view, "911 Calls are not allowed!", Snackbar.LENGTH_LONG).show();
-					  Toast.makeText(getApplicationContext(),
-							"911 Calls are not allowed!", Toast.LENGTH_SHORT)
-							.show();
-				}
-
-				else{
-
-					updateModelFromLayout();
-
-					CallManagerHelper.cancelcalls(this);
-
-					if (callDetails.id < 0) {
-						dbHelper.createcall(callDetails);
-					} else {
-						dbHelper.updatecall(callDetails);
-					}
-
-					CallManagerHelper.setcalls(this);
-
-					setResult(RESULT_OK);
-					finish();
-
-				}
 			}
 		}
 		return super.onOptionsItemSelected(item);

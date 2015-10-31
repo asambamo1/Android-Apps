@@ -1,235 +1,254 @@
-<ScrollView
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#455A64"
-    android:isScrollContainer="true" >
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp" >
+        android:layout_height="match_parent"
+        android:background="#455A64"
+        android:isScrollContainer="true" >
 
-        <TimePicker
-            android:id="@+id/call_details_time_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:background="#546E7A"
-            android:layout_centerHorizontal="true" />
-
-        <EditText
-            android:id="@+id/call_details_name"
-            android:imeOptions="actionDone"
-            android:background="@drawable/edittext_border"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:textColor="#F1F1F1"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/call_details_time_picker"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:ems="10"
-            android:singleLine="true"
-            android:hint="@string/details_call_name"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <View
-            android:id="@+id/divider"
-            style="@style/Divider"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/call_details_name" />
-
-        <EditText
-            android:id="@+id/autodial_number"
-            android:imeOptions="actionDone"
-            android:layout_marginRight="5dp"
-            android:padding="10dp"
-            android:background="@drawable/edittext_border"
-            android:inputType="phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/call_details_name"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:ems="10"
-            android:textColor="#F1F1F1"
-            android:hint="Call Number"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/contacts"
-            android:layout_toStartOf="@+id/contacts" />
-
-        <View
-            android:id="@+id/divider2"
-            style="@style/Divider"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/autodial_number" />
-
-
-
-        <com.smartlifedigital.autodialer.CustomSwitch
-            android:id="@+id/call_details_repeat_weekly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/divider2"
-            android:checked="true"
-            android:textColor="#F1F1F1"
-            android:text="@string/details_repeat_weekly"/>
-
-        <View
-            android:id="@+id/divider1"
-            style="@style/Divider"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/call_details_repeat_weekly" />
-
-        <com.smartlifedigital.autodialer.CustomSwitch
-            android:id="@+id/call_details_repeat_sunday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#F1F1F1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/divider1"
-            android:checked="true"
-            android:text="@string/details_sunday" />
-
-        <com.smartlifedigital.autodialer.CustomSwitch
-            android:id="@+id/call_details_repeat_monday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#F1F1F1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/call_details_repeat_sunday"
-            android:layout_below="@+id/call_details_repeat_sunday"
-            android:checked="true"
-            android:text="@string/details_monday" />
-
-        <com.smartlifedigital.autodialer.CustomSwitch
-            android:id="@+id/call_details_repeat_tuesday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#F1F1F1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/call_details_repeat_monday"
-            android:layout_below="@+id/call_details_repeat_monday"
-            android:checked="true"
-            android:text="@string/details_tuesday" />
-
-        <com.smartlifedigital.autodialer.CustomSwitch
-            android:id="@+id/call_details_repeat_wednesday"
-            android:textColor="#F1F1F1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/call_details_repeat_tuesday"
-            android:layout_below="@+id/call_details_repeat_tuesday"
-            android:checked="true"
-            android:text="@string/details_wednesday" />
-
-        <com.smartlifedigital.autodialer.CustomSwitch
-            android:id="@+id/call_details_repeat_thursday"
-            android:textColor="#F1F1F1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/call_details_repeat_wednesday"
-            android:layout_below="@+id/call_details_repeat_wednesday"
-            android:checked="true"
-            android:text="@string/details_thursday" />
-
-        <com.smartlifedigital.autodialer.CustomSwitch
-            android:id="@+id/call_details_repeat_friday"
-            android:textColor="#F1F1F1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/call_details_repeat_thursday"
-            android:layout_below="@+id/call_details_repeat_thursday"
-            android:checked="true"
-            android:text="@string/details_friday" />
-
-        <com.smartlifedigital.autodialer.CustomSwitch
-            android:id="@+id/call_details_repeat_saturday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#F1F1F1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/call_details_repeat_friday"
-            android:layout_below="@+id/call_details_repeat_friday"
-            android:checked="true"
-            android:text="@string/details_saturday" />
-
-        <View
-            android:id="@+id/divider4"
-            style="@style/Divider"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/call_details_repeat_saturday" />
-
-        <LinearLayout
-            android:id="@+id/call_ringtone_container"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/view_touch_selector"
-            android:orientation="vertical"
-            android:layout_below="@+id/divider4"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp" >
 
-            <TextView
-                android:id="@+id/call_label_tone"
+            <TimePicker
+                android:id="@+id/call_details_time_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="#546E7A"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:id="@+id/call_details_name"
+                android:imeOptions="actionDone"
+                android:background="@drawable/edittext_border"
+                android:padding="10dp"
                 android:layout_width="wrap_content"
                 android:textColor="#F1F1F1"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:text="@string/details_call_tone"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/call_label_tone_selection"
-                android:layout_width="wrap_content"
-                android:textColor="#F1F1F1"
-                android:layout_height="wrap_content"
+                android:layout_below="@+id/call_details_time_picker"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:text="@string/details_call_tone_default"
-                android:textSize="14sp" />
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="@string/details_call_name"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
-        </LinearLayout>
+            <View
+                android:id="@+id/divider"
+                style="@style/Divider"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/call_details_name" />
 
-        <View
-            android:id="@+id/divider3"
-            style="@style/Divider"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/call_ringtone_container" />
+            <EditText
+                android:id="@+id/autodial_number"
+                android:imeOptions="actionDone"
+                android:layout_marginRight="5dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_border"
+                android:inputType="phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/call_details_name"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:ems="10"
+                android:textColor="#F1F1F1"
+                android:hint="Call Number"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/contacts"
+                android:layout_toStartOf="@+id/contacts" />
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/contact"
-            android:id="@+id/contacts"
-            android:layout_alignBaseline="@+id/autodial_number"
-            android:layout_alignRight="@+id/divider2"
-            android:layout_alignEnd="@+id/divider2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text"
-            android:visibility="invisible"
-            android:id="@+id/textView2"
-            android:layout_gravity="right" />
+            <View
+                android:id="@+id/divider2"
+                style="@style/Divider"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/autodial_number" />
 
 
-    </RelativeLayout>
 
-</ScrollView>
+            <com.smartlifedigital.autodialer.CustomSwitch
+                android:id="@+id/call_details_repeat_weekly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/divider2"
+                android:checked="true"
+                android:textColor="#F1F1F1"
+                android:text="@string/details_repeat_weekly"/>
+
+            <View
+                android:id="@+id/divider1"
+                style="@style/Divider"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/call_details_repeat_weekly" />
+
+            <com.smartlifedigital.autodialer.CustomSwitch
+                android:id="@+id/call_details_repeat_sunday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F1F1F1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/divider1"
+                android:checked="true"
+                android:text="@string/details_sunday" />
+
+            <com.smartlifedigital.autodialer.CustomSwitch
+                android:id="@+id/call_details_repeat_monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F1F1F1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/call_details_repeat_sunday"
+                android:layout_below="@+id/call_details_repeat_sunday"
+                android:checked="true"
+                android:text="@string/details_monday" />
+
+            <com.smartlifedigital.autodialer.CustomSwitch
+                android:id="@+id/call_details_repeat_tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F1F1F1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/call_details_repeat_monday"
+                android:layout_below="@+id/call_details_repeat_monday"
+                android:checked="true"
+                android:text="@string/details_tuesday" />
+
+            <com.smartlifedigital.autodialer.CustomSwitch
+                android:id="@+id/call_details_repeat_wednesday"
+                android:textColor="#F1F1F1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/call_details_repeat_tuesday"
+                android:layout_below="@+id/call_details_repeat_tuesday"
+                android:checked="true"
+                android:text="@string/details_wednesday" />
+
+            <com.smartlifedigital.autodialer.CustomSwitch
+                android:id="@+id/call_details_repeat_thursday"
+                android:textColor="#F1F1F1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/call_details_repeat_wednesday"
+                android:layout_below="@+id/call_details_repeat_wednesday"
+                android:checked="true"
+                android:text="@string/details_thursday" />
+
+            <com.smartlifedigital.autodialer.CustomSwitch
+                android:id="@+id/call_details_repeat_friday"
+                android:textColor="#F1F1F1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/call_details_repeat_thursday"
+                android:layout_below="@+id/call_details_repeat_thursday"
+                android:checked="true"
+                android:text="@string/details_friday" />
+
+            <com.smartlifedigital.autodialer.CustomSwitch
+                android:id="@+id/call_details_repeat_saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F1F1F1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/call_details_repeat_friday"
+                android:layout_below="@+id/call_details_repeat_friday"
+                android:checked="true"
+                android:text="@string/details_saturday" />
+
+            <View
+                android:id="@+id/divider4"
+                style="@style/Divider"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/call_details_repeat_saturday" />
+
+            <LinearLayout
+                android:id="@+id/call_ringtone_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/view_touch_selector"
+                android:orientation="vertical"
+                android:layout_below="@+id/divider4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:id="@+id/call_label_tone"
+                    android:layout_width="wrap_content"
+                    android:textColor="#F1F1F1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/details_call_tone"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/call_label_tone_selection"
+                    android:layout_width="wrap_content"
+                    android:textColor="#F1F1F1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:text="@string/details_call_tone_default"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider3"
+                style="@style/Divider"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/call_ringtone_container" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/contact"
+                android:id="@+id/contacts"
+                android:layout_alignBaseline="@+id/autodial_number"
+                android:layout_alignRight="@+id/divider2"
+                android:layout_alignEnd="@+id/divider2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:visibility="invisible"
+                android:id="@+id/textView2"
+                android:layout_gravity="right" />
+
+            <com.rey.material.widget.Button
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/save_call"
+                android:layout_below="@+id/call_ringtone_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save_call"
+                android:textColor="@color/white"
+                android:background="@color/blue"
+                app:rd_rippleType="touch"
+                app:rd_backgroundAnimDuration="0"
+                app:rd_backgroundColor="@android:color/transparent"
+                app:rd_maxRippleRadius="match_view"
+                app:rd_rippleAnimDuration="150"
+                app:rd_enable="true"/>
+        </RelativeLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
