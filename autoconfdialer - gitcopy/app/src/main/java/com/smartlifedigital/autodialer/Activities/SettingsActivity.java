@@ -13,8 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.smartlifedigital.autodialer.About;
-import com.smartlifedigital.autodialer.R;
 import com.smartlifedigital.autodialer.Adapters.SettingsAdapter;
+import com.smartlifedigital.autodialer.R;
 
 import butterknife.Bind;
 import butterknife.BindString;

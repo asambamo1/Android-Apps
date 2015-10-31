@@ -1,17 +1,17 @@
 package com.smartlifedigital.autodialer;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.smartlifedigital.autodialer.Activities.SettingsActivity;
 
 import java.sql.Date;
@@ -92,32 +92,33 @@ public class CallListActivity extends AppCompatActivity {
 	
 	public void deletecall(long id) {
 		final long callId = id;
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("Would you like to delete this call?")
-		.setTitle("Delete Call?")
-		.setCancelable(true)
-		.setNegativeButton("No", null)
-		.setPositiveButton("Yes", new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //Cancel calls
-                CallManagerHelper.cancelcalls(mContext);
-                //Delete call from DB by id
-                dbHelper.deletecall(callId);
-                //Refresh the list of the scheduled calls in the adapter
-                mAdapter.setcalls(dbHelper.getcalls());
-                //Notify the adapter the data has changed
-                mAdapter.notifyDataSetChanged();
-                //Schedule the calls
-                try {
-                    CallManagerHelper.setcalls(mContext);
-                } catch (NullPointerException e) {
-                }
-                if (mAdapter.getCount() == 0) {
-                    noCalls.setVisibility(View.VISIBLE);
-                }
-            }
-        }).show();
+        new MaterialDialog.Builder(this)
+                .title(R.string.confirm_delete_title)
+                .content(R.string.confirm_delete_message)
+                .positiveText(android.R.string.yes)
+                .negativeText(android.R.string.no)
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        //Cancel calls
+                        CallManagerHelper.cancelcalls(mContext);
+                        //Delete call from DB by id
+                        dbHelper.deletecall(callId);
+                        //Refresh the list of the scheduled calls in the adapter
+                        mAdapter.setcalls(dbHelper.getcalls());
+                        //Notify the adapter the data has changed
+                        mAdapter.notifyDataSetChanged();
+                        //Schedule the calls
+                        try {
+                            CallManagerHelper.setcalls(mContext);
+                        } catch (NullPointerException e) {
+                        }
+                        if (mAdapter.getCount() == 0) {
+                            noCalls.setVisibility(View.VISIBLE);
+                        }
+                    }
+                })
+                .show();
 	}
 
     @Override

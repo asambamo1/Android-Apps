@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AutoDialer</string>
+    <string name="app_name">Auto Dialer</string>
     <string name="action_settings">Settings</string>
 
     <string name="details_call_name">Call Name (Optional)</string>
@@ -35,4 +35,7 @@
 
     <!-- Menu icons -->
     <string name="settings">Settings</string>
+
+    <string name="confirm_delete_title">Delete call</string>
+    <string name="confirm_delete_message">Would you like to delete this call?</string>
 </resources>
