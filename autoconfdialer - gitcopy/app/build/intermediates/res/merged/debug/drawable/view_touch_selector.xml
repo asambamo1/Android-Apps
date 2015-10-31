@@ -1,3 +1,3 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 	<item android:state_pressed="true" android:drawable="@drawable/holo_pressed_blue" />      
-</selector><!-- From: file:/C:/Users/Aravind/Desktop/my%20files/AutoDialerFinal/autoconfdialer%20-%20gitcopy/app/src/main/res/drawable/view_touch_selector.xml -->
+</selector><!-- From: file:/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer%20-%20gitcopy/app/src/main/res/drawable/view_touch_selector.xml -->

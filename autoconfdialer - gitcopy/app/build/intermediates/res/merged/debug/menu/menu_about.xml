@@ -4,4 +4,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>
-<!-- From: file:/C:/Users/Aravind/Desktop/my%20files/AutoDialerFinal/autoconfdialer%20-%20gitcopy/app/src/main/res/menu/menu_about.xml -->
+<!-- From: file:/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer%20-%20gitcopy/app/src/main/res/menu/menu_about.xml -->
