@@ -1,5 +1,5 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#455A64"
@@ -11,8 +11,7 @@
         android:paddingBottom="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:paddingTop="16dp"
-        tools:context=".callDetailsActivity" >
+        android:paddingTop="16dp" >
 
         <TimePicker
             android:id="@+id/call_details_time_picker"

@@ -1,23 +1,16 @@
 package com.smartlifedigital.autodialer;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -25,7 +18,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
+public class CallDetailsActivity extends AppCompatActivity {
 	
 	private Database dbHelper = new Database(this);
 	
@@ -42,28 +35,15 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 	private CustomSwitch chkFriday;
 	private CustomSwitch chkSaturday;
 	private TextView txtToneSelection, t2;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		//supportRequestWindowFeature(Window.FEATURE_ACTION_BAR);
-		requestWindowFeature(Window.FEATURE_ACTION_BAR);
-
 		setContentView(R.layout.activity_details);
 
-		/*getSupportActionBar().setTitle("Schedule a Call");
+		getSupportActionBar().setTitle("Schedule a Call");
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		android.support.v7.app.ActionBar bar = getSupportActionBar();
-		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));*/
-
-		getActionBar().setTitle("Schedule a Call");
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		ActionBar bar = getActionBar();
-		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
-
-
-
 
 		timePicker = (TimePicker) findViewById(R.id.call_details_time_picker);
 		edtName = (EditText) findViewById(R.id.call_details_name);
@@ -79,7 +59,6 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 		txtToneSelection = (TextView) findViewById(R.id.call_label_tone_selection);
 		t2 = (TextView)findViewById(R.id.textView2);
 
-		
 		long id = getIntent().getExtras().getLong("id");
 		
 		if (id == -1) {
@@ -123,10 +102,6 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 				Intent pickContactIntent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
 				pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE); // Show user only contacts w/ phone numbers
 				startActivityForResult(pickContactIntent, 1);
-
-
-
-
 			}
 		});
 	}
@@ -184,7 +159,6 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
 		switch (item.getItemId()) {
 			case android.R.id.home: {
 				finish();
@@ -220,13 +194,11 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 
 					CallManagerHelper.cancelcalls(this);
 
-
 					if (callDetails.id < 0) {
 						dbHelper.createcall(callDetails);
 					} else {
 						dbHelper.updatecall(callDetails);
 					}
-
 
 					CallManagerHelper.setcalls(this);
 
@@ -234,12 +206,8 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 					finish();
 
 				}
-
-
 			}
-
 		}
-
 		return super.onOptionsItemSelected(item);
 	}
 	
@@ -258,6 +226,4 @@ public class CallDetailsActivity extends Activity/*AppCompatActivity*/ {
 		callDetails.setRepeatingDay(Model.SATURDAY, chkSaturday.isChecked());
 		callDetails.isEnabled = true;
 	}
-
-
 }

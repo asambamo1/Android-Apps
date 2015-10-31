@@ -1,7 +1,5 @@
 package com.smartlifedigital.autodialer;
 
-import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,11 +10,13 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import android.widget.Button;
+
+import java.util.List;
 
 public class CallListAdapter extends BaseAdapter {
 
@@ -91,7 +91,6 @@ public class CallListAdapter extends BaseAdapter {
 				.append(min ).append(" ").append(timeSet).toString();
 
 
-
 		TextView txtTime = (TextView) view.findViewById(R.id.call_item_time);
 		txtTime.setText(aTime);
 		
@@ -101,8 +100,6 @@ public class CallListAdapter extends BaseAdapter {
 		TextView txtNumber = (TextView) view.findViewById(R.id.number);
 		txtNumber.setText(model.phonenumber);
 
-
-
 		updateTextColor((TextView) view.findViewById(R.id.call_item_sunday), model.getRepeatingDay(Model.SUNDAY));
 		updateTextColor((TextView) view.findViewById(R.id.call_item_monday), model.getRepeatingDay(Model.MONDAY));
 		updateTextColor((TextView) view.findViewById(R.id.call_item_tuesday), model.getRepeatingDay(Model.TUESDAY));
@@ -111,8 +108,6 @@ public class CallListAdapter extends BaseAdapter {
 		updateTextColor((TextView) view.findViewById(R.id.call_item_friday), model.getRepeatingDay(Model.FRDIAY));
 		updateTextColor((TextView) view.findViewById(R.id.call_item_saturday), model.getRepeatingDay(Model.SATURDAY));
 		updateTextColor((TextView) view.findViewById(R.id.phone_call_repeat), model.repeatWeekly);
-
-
 
 		ToggleButton btnToggle = (ToggleButton) view.findViewById(R.id.call_item_toggle);
 		btnToggle.setChecked(model.isEnabled);
@@ -133,12 +128,9 @@ public class CallListAdapter extends BaseAdapter {
 			public void onClick(View view) {
 				Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + Uri.encode(number)));
 				mContext.startActivity(intent);
-
-
 			}
 		});
 
-		
 		view.setTag(Long.valueOf(model.id));
 		view.setOnClickListener(new OnClickListener() {
 			
@@ -147,9 +139,8 @@ public class CallListAdapter extends BaseAdapter {
 				((CallListActivity) mContext).startcallDetailsActivity(((Long) view.getTag()).longValue());
 			}
 		});
-		
+
 		view.setOnLongClickListener(new OnLongClickListener() {
-			
 			@Override
 			public boolean onLongClick(View view) {
 				((CallListActivity) mContext).deletecall(((Long) view.getTag()).longValue());
@@ -168,5 +159,4 @@ public class CallListAdapter extends BaseAdapter {
 			view.setTextColor(Color.BLACK);
 		}
 	}
-
 }

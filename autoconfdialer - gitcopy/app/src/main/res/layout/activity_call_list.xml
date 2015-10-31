@@ -9,7 +9,8 @@
     android:background="#455A64"
     tools:context=".callListActivity" >
 
-    <ListView android:id="@android:id/list"
+    <ListView
+        android:id="@+id/calls_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>
 

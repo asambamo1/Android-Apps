@@ -13,8 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.smartlifedigital.autodialer.R;
-
 @SuppressLint("NewApi")
 public class CustomSwitch extends FrameLayout {
 

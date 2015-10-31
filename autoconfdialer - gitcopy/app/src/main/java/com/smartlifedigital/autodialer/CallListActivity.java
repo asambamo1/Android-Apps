@@ -1,62 +1,48 @@
 package com.smartlifedigital.autodialer;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.ListView;
 
 import java.sql.Date;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
-public class CallListActivity extends ListActivity {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class CallListActivity extends AppCompatActivity {
 
 	private CallListAdapter mAdapter;
 	private Context mContext;
 	private Database dbHelper = new Database(this);
-	private ListView list;
+    @Bind(R.id.empty) View noCalls;
+    @Bind(R.id.calls_list) ListView callsList;
 
-
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		mContext = this;
-
-		requestWindowFeature(Window.FEATURE_ACTION_BAR);
-
 		setContentView(R.layout.activity_call_list);
-
-		ActionBar bar = getActionBar();
-		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
-
+        ButterKnife.bind(this);
 		mAdapter = new CallListAdapter(this, dbHelper.getcalls());
-
-		setListAdapter(mAdapter);
-
-		try {
-			Collections.sort((List<MyObject>) list, new Comparator<MyObject>() {
-				public int compare(MyObject o1, MyObject o2) {
-					return o1.getDateTime().compareTo(o2.getDateTime());
-				}
-			});
-		}catch(NullPointerException e){
-
-		}
+        callsList.setAdapter(mAdapter);
 	}
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mAdapter.getCount() != 0) {
+            noCalls.setVisibility(View.GONE);
+        }
+    }
 
 	public static class MyObject implements Comparable<MyObject> {
 
@@ -74,47 +60,6 @@ public class CallListActivity extends ListActivity {
 		public int compareTo(MyObject o) {
 			return getDateTime().compareTo(o.getDateTime());
 		}
-	}
-
-
-
-
-	@Override
-	public void onContentChanged() {
-		super.onContentChanged();
-
-		View empty = findViewById(R.id.empty);
-		ListView list = (ListView) findViewById(android.R.id.list);
-		list.setEmptyView(empty);
-
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.call_list, menu);
-		return true;
-	}
-
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-
-		switch (item.getItemId()) {
-			case R.id.action_add_new_call: {
-				startcallDetailsActivity(-1);
-				break;
-
-			}
-
-			case R.id.action_info: {
-				Intent intent = new Intent(CallListActivity.this, About.class);
-				startActivity(intent);
-				break;
-
-			}
-		}
-
-		return super.onOptionsItemSelected(item);
 	}
 	
 	@Override
@@ -151,24 +96,48 @@ public class CallListActivity extends ListActivity {
 		.setCancelable(true)
 		.setNegativeButton("No", null)
 		.setPositiveButton("Yes", new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				//Cancel calls
-				CallManagerHelper.cancelcalls(mContext);
-				//Delete call from DB by id
-				dbHelper.deletecall(callId);
-				//Refresh the list of the scheduled calls in the adapter
-				mAdapter.setcalls(dbHelper.getcalls());
-				//Notify the adapter the data has changed
-				mAdapter.notifyDataSetChanged();
-				//Schedule the calls
-				try {
-					CallManagerHelper.setcalls(mContext);
-				}
-				catch (NullPointerException e){
-
-				}
-			}
-		}).show();
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Cancel calls
+                CallManagerHelper.cancelcalls(mContext);
+                //Delete call from DB by id
+                dbHelper.deletecall(callId);
+                //Refresh the list of the scheduled calls in the adapter
+                mAdapter.setcalls(dbHelper.getcalls());
+                //Notify the adapter the data has changed
+                mAdapter.notifyDataSetChanged();
+                //Schedule the calls
+                try {
+                    CallManagerHelper.setcalls(mContext);
+                } catch (NullPointerException e) {
+                }
+                if (mAdapter.getCount() == 0) {
+                    noCalls.setVisibility(View.VISIBLE);
+                }
+            }
+        }).show();
 	}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.call_list, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add_new_call: {
+                startcallDetailsActivity(-1);
+                break;
+            }
+            case R.id.action_info: {
+                Intent intent = new Intent(CallListActivity.this, About.class);
+                startActivity(intent);
+                break;
+
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

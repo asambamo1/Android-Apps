@@ -1,8 +1,5 @@
 package com.smartlifedigital.autodialer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -11,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 
 import com.smartlifedigital.autodialer.DBColumns.call;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database extends SQLiteOpenHelper {
 
