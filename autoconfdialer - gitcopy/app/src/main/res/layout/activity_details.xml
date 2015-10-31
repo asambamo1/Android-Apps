@@ -23,6 +23,9 @@
 
         <EditText
             android:id="@+id/call_details_name"
+            android:imeOptions="actionDone"
+            android:background="@drawable/edittext_border"
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:textColor="#F1F1F1"
             android:layout_height="wrap_content"
@@ -45,6 +48,10 @@
 
         <EditText
             android:id="@+id/autodial_number"
+            android:imeOptions="actionDone"
+            android:layout_marginRight="5dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_border"
             android:inputType="phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -208,9 +215,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/contact"
-            android:text=""
             android:id="@+id/contacts"
-            android:layout_alignBottom="@+id/autodial_number"
+            android:layout_alignBaseline="@+id/autodial_number"
             android:layout_alignRight="@+id/divider2"
             android:layout_alignEnd="@+id/divider2" />
 
