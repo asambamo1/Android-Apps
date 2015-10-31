@@ -77,107 +77,201 @@
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/autodial_number" />
 
-
-
-            <com.smartlifedigital.autodialer.CustomSwitch
-                android:id="@+id/call_details_repeat_weekly"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
+            <FrameLayout
+                style="@style/switch_style"
+                android:id="@+id/weekly_widget"
                 android:layout_below="@+id/divider2"
-                android:checked="true"
-                android:textColor="#F1F1F1"
-                android:text="@string/details_repeat_weekly"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/details_repeat_weekly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"/>
+
+                <com.rey.material.widget.Switch
+                    style="@style/Material.Widget.Switch"
+                    android:id="@+id/call_details_repeat_weekly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    android:checked="false"/>
+            </FrameLayout>
 
             <View
                 android:id="@+id/divider1"
                 style="@style/Divider"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/call_details_repeat_weekly" />
+                android:layout_below="@+id/weekly_widget" />
 
-            <com.smartlifedigital.autodialer.CustomSwitch
-                android:id="@+id/call_details_repeat_sunday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#F1F1F1"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
+            <LinearLayout
+                android:id="@+id/switches"
                 android:layout_below="@+id/divider1"
-                android:checked="true"
-                android:text="@string/details_sunday" />
-
-            <com.smartlifedigital.autodialer.CustomSwitch
-                android:id="@+id/call_details_repeat_monday"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#F1F1F1"
-                android:layout_alignParentLeft="true"
-                android:layout_alignRight="@+id/call_details_repeat_sunday"
-                android:layout_below="@+id/call_details_repeat_sunday"
-                android:checked="true"
-                android:text="@string/details_monday" />
+                android:orientation="vertical">
 
-            <com.smartlifedigital.autodialer.CustomSwitch
-                android:id="@+id/call_details_repeat_tuesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#F1F1F1"
-                android:layout_alignParentLeft="true"
-                android:layout_alignRight="@+id/call_details_repeat_monday"
-                android:layout_below="@+id/call_details_repeat_monday"
-                android:checked="true"
-                android:text="@string/details_tuesday" />
+                <FrameLayout
+                    style="@style/switch_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <com.smartlifedigital.autodialer.CustomSwitch
-                android:id="@+id/call_details_repeat_wednesday"
-                android:textColor="#F1F1F1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignRight="@+id/call_details_repeat_tuesday"
-                android:layout_below="@+id/call_details_repeat_tuesday"
-                android:checked="true"
-                android:text="@string/details_wednesday" />
+                    <TextView
+                        android:text="@string/details_sunday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"/>
 
-            <com.smartlifedigital.autodialer.CustomSwitch
-                android:id="@+id/call_details_repeat_thursday"
-                android:textColor="#F1F1F1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignRight="@+id/call_details_repeat_wednesday"
-                android:layout_below="@+id/call_details_repeat_wednesday"
-                android:checked="true"
-                android:text="@string/details_thursday" />
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:id="@+id/call_details_repeat_sunday"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:checked="false"/>
+                </FrameLayout>
 
-            <com.smartlifedigital.autodialer.CustomSwitch
-                android:id="@+id/call_details_repeat_friday"
-                android:textColor="#F1F1F1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignRight="@+id/call_details_repeat_thursday"
-                android:layout_below="@+id/call_details_repeat_thursday"
-                android:checked="true"
-                android:text="@string/details_friday" />
+                <FrameLayout
+                    style="@style/switch_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <com.smartlifedigital.autodialer.CustomSwitch
-                android:id="@+id/call_details_repeat_saturday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#F1F1F1"
-                android:layout_alignParentLeft="true"
-                android:layout_alignRight="@+id/call_details_repeat_friday"
-                android:layout_below="@+id/call_details_repeat_friday"
-                android:checked="true"
-                android:text="@string/details_saturday" />
+                    <TextView
+                        android:text="@string/details_monday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"/>
+
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:id="@+id/call_details_repeat_monday"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:checked="false"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/switch_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/details_tuesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"/>
+
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:id="@+id/call_details_repeat_tuesday"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:checked="false"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/switch_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/details_wednesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"/>
+
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:id="@+id/call_details_repeat_wednesday"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:checked="false"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/switch_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/details_thursday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"/>
+
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:id="@+id/call_details_repeat_thursday"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:checked="false"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/switch_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/details_friday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"/>
+
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:id="@+id/call_details_repeat_friday"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:checked="false"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/switch_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/details_saturday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"/>
+
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:id="@+id/call_details_repeat_saturday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:checked="false"/>
+                </FrameLayout>
+            </LinearLayout>
 
             <View
                 android:id="@+id/divider4"
                 style="@style/Divider"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/call_details_repeat_saturday" />
+                android:layout_below="@+id/switches" />
 
             <LinearLayout
                 android:id="@+id/call_ringtone_container"

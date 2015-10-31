@@ -20,6 +20,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.rey.material.widget.Switch;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -31,15 +33,16 @@ public class CallDetailsActivity extends AppCompatActivity {
 	
 	private TimePicker timePicker;
 	private EditText edtName, edtNumber;
-	private CustomSwitch chkWeekly;
-	private CustomSwitch chkSunday;
-	private CustomSwitch chkMonday;
-	private CustomSwitch chkTuesday;
-	private CustomSwitch chkWednesday;
-	private CustomSwitch chkThursday;
-	private CustomSwitch chkFriday;
-	private CustomSwitch chkSaturday;
-	private TextView txtToneSelection, t2;
+	@Bind(R.id.call_details_repeat_weekly) Switch chkWeekly;
+	@Bind(R.id.call_details_repeat_sunday) Switch chkSunday;
+	@Bind(R.id.call_details_repeat_monday) Switch chkMonday;
+	@Bind(R.id.call_details_repeat_tuesday) Switch chkTuesday;
+	@Bind(R.id.call_details_repeat_wednesday) Switch chkWednesday;
+	@Bind(R.id.call_details_repeat_thursday) Switch chkThursday;
+	@Bind(R.id.call_details_repeat_friday) Switch chkFriday;
+	@Bind(R.id.call_details_repeat_saturday) Switch chkSaturday;
+	@Bind(R.id.call_label_tone_selection) TextView txtToneSelection;
+    @Bind(R.id.textView2) TextView t2;
     @Bind(R.id.coordinator_layout) CoordinatorLayout snackbar;
 
 	@Override
@@ -55,16 +58,6 @@ public class CallDetailsActivity extends AppCompatActivity {
 		timePicker = (TimePicker) findViewById(R.id.call_details_time_picker);
 		edtName = (EditText) findViewById(R.id.call_details_name);
 		edtNumber = (EditText) findViewById(R.id.autodial_number);
-		chkWeekly = (CustomSwitch) findViewById(R.id.call_details_repeat_weekly);
-		chkSunday = (CustomSwitch) findViewById(R.id.call_details_repeat_sunday);
-		chkMonday = (CustomSwitch) findViewById(R.id.call_details_repeat_monday);
-		chkTuesday = (CustomSwitch) findViewById(R.id.call_details_repeat_tuesday);
-		chkWednesday = (CustomSwitch) findViewById(R.id.call_details_repeat_wednesday);
-		chkThursday = (CustomSwitch) findViewById(R.id.call_details_repeat_thursday);
-		chkFriday = (CustomSwitch) findViewById(R.id.call_details_repeat_friday);
-		chkSaturday = (CustomSwitch) findViewById(R.id.call_details_repeat_saturday);
-		txtToneSelection = (TextView) findViewById(R.id.call_label_tone_selection);
-		t2 = (TextView)findViewById(R.id.textView2);
 
 		long id = getIntent().getExtras().getLong("id");
 		
