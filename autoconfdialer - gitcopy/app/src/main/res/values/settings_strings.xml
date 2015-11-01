@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <string name="help">Help</string>
     <string name="send_feedback">Send feedback</string>
     <string name="rate_this_app">Rate this app</string>
     <string name="about_the_developer">About the developer</string>
     <string name="source_code">Source code</string>
+    <string name="more_settings">Customize Ringtone Seconds</string>
     <array name="settings_options">
         <item>@string/help</item>
         <item>@string/send_feedback</item>
         <item>@string/rate_this_app</item>
-        <item>@string/about_the_developer</item>
+        <!--<item>@string/about_the_developer</item>
         <item>@string/source_code</item>
+        <item>@string/more_settings</item>-->
     </array>
 
     <!-- Font Awesome Icons -->
@@ -22,5 +24,5 @@
 
     <string name="play_store_error">Unable to open the Play Store.</string>
     <string name="feedback_subject">Auto Dialer Feedback</string>
-    <string name="send_email">Send email</string>
+    <string name="send_email">Send Email</string>
 </resources>

@@ -2,6 +2,8 @@ package com.smartlifedigital.autodialer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -27,11 +29,16 @@ public class CallListActivity extends AppCompatActivity {
     @Bind(R.id.empty) View noCalls;
     @Bind(R.id.calls_list) ListView callsList;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		mContext = this;
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
+
+
+        mContext = this;
 		setContentView(R.layout.activity_call_list);
         ButterKnife.bind(this);
 		mAdapter = new CallListAdapter(this, dbHelper.getcalls());

@@ -2,102 +2,102 @@
 <items version="2" >
 
     <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-a30448ab90db262154e803ee050f846078784986.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3927580436c6d3db27913d6093ff751f540f03bc">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-84fb3ef51d2a50e05e82b77fe52a0369b6173bf6.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/butterknife-7.0.1-af6a162372ef460a0b7e2f9f1cdf1a0b9874f2d0.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-8a764113d082815a09437a753cee22edf0a4f434.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.github.rey5137/material/1.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="0040be6592cbfbb19a2c1e90a759278795ed2280">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-5f1eb888296ae746ed55f57e3f04489fd6441313.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-b0fee9b89094fc9111aecc210a9a224b9b8fe54b.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.beardedhen/androidbootstrap/1.2.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="11cd8b9af3b27673eceda7335192cd01b423ef26">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-ebd60c3007d383f6c0d20b2d4541ee8f3eeabb1e.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/2.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-b4a85afbbecf2172c1ca4428dd0d7ff6d5ca79ac.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-dfc397fdee0b374d2a0f16f3ab04b524eb1ac516.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/jars/classes.jar"
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.android.support\design\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="19026d31f5d3ae868db81319671a642be5fbba08">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-98d15bbb2c204e953d91af011a4cc9aca7788bd6.jar" />
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-dfd954c071735b3fd609981ea5e83013f5e808a4.jar" />
     </item>
     <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.balysv/material-ripple/1.0.2/jars/classes.jar"
+        jar="C:\Users\Aravind\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="c733e9d1b065d940a08f2fca0ff920dfc08d94cc">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-7dd11d5b2b462d0053a3b9a110c80cc27f16f917.jar" />
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1-a319ad66091ba91416abdcae4b0e9a3f5fe4e8d1.jar" />
     </item>
     <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-7e6b9255e8dfe6ceeb800706d8eb8352294daf8c.jar" />
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-f00dc00a9c74625e66eaadeb78092b10b19061b6.jar" />
     </item>
     <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/me.zhanghai.android.materialprogressbar/library/1.1.4/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="2a24cba08e1d865a79e61335f5a1bd64d520106d">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-e4e4090870d023917d9dae60b68aff26ede7ce41.jar" />
-    </item>
-    <item
-        jar="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/jars/classes.jar"
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
-        <dex dex="/Users/alexanderchiou/AndroidStudioProjects/AutoDialer/autoconfdialer - gitcopy/app/build/intermediates/pre-dexed/debug/classes-010845045a1356cbc3326289dd6c50a8df346a0e.jar" />
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-f3fc0bad766631e845ce5d8659020a86de7b3c63.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-ca80518c961f8cd2a37b4a4186007fd6ef2f59a5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.balysv\material-ripple\1.0.2\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c733e9d1b065d940a08f2fca0ff920dfc08d94cc">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-c2cccf6bcd182cd0235c1710c3b354ea028f6de4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.github.rey5137\material\1.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0040be6592cbfbb19a2c1e90a759278795ed2280">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-88d56df5c419132764051c44d2791be3cf34f1da.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.afollestad.material-dialogs\core\0.8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5b6c01dabc46ed6d906eee8630b12d03994e2cf4">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-fc0ba68d1149229f8d287d7caa04b2fca98e1a27.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-0fc8280697d2d39e260e9d1a1716883fde05a98a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-ad8a90145058d5cd9a9fa6b1db5804fdf959fb2b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-1c3b25e914248f3f738e7f799b729ff543e5dd09.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.beardedhen\androidbootstrap\1.2.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="11cd8b9af3b27673eceda7335192cd01b423ef26">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-3203d36f80b837fc49f5f5390074419632e7c71c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-2a3a6dfab7cec1644f24a81ef4635800415eff14.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\exploded-aar\me.zhanghai.android.materialprogressbar\library\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2a24cba08e1d865a79e61335f5a1bd64d520106d">
+        <dex dex="C:\Users\Aravind\Desktop\my files\AutoDialerFinal\Android-Apps-master\autoconfdialer - gitcopy\app\build\intermediates\pre-dexed\debug\classes-047d4aab254f6bdf3167c1d9bb32a9dbac54608c.jar" />
     </item>
 
 </items>

@@ -2,6 +2,8 @@ package com.smartlifedigital.autodialer;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -53,6 +55,8 @@ public class CallDetailsActivity extends AppCompatActivity {
 
 		getSupportActionBar().setTitle("Schedule a Call");
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		android.support.v7.app.ActionBar bar = getSupportActionBar();
+		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
 
 		timePicker = (TimePicker) findViewById(R.id.call_details_time_picker);
 		edtName = (EditText) findViewById(R.id.call_details_name);
@@ -175,7 +179,7 @@ public class CallDetailsActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.blank_menu, menu);
+		getMenuInflater().inflate(R.menu.menu_activity_set_calls, menu);
 		return true;
 	}
 	
@@ -186,7 +190,50 @@ public class CallDetailsActivity extends AppCompatActivity {
 				finish();
 				break;
 			}
+			case R.id.action_save_call_details: {
+				t2.setText(edtNumber.getText().toString());
+				if (t2 == null || t2.getText().toString().length() < 1) {
+					View view = findViewById(android.R.id.content);
+					Snackbar.make(snackbar, "Please enter a phone number first!", Snackbar.LENGTH_LONG).show();
+
+				} else if (t2.getText().toString().startsWith("911")){
+					View view = findViewById(android.R.id.content);
+					Snackbar.make(view, "911 Calls are not allowed!", Snackbar.LENGTH_LONG).show();
+				}
+
+				else if(t2.getText().toString().contains(" 911")){
+					View view = findViewById(android.R.id.content);
+					Snackbar.make(view, "911 Calls are not allowed!", Snackbar.LENGTH_LONG).show();
+				}
+
+				else{
+
+					updateModelFromLayout();
+
+					CallManagerHelper.cancelcalls(this);
+
+
+					if (callDetails.id < 0) {
+						dbHelper.createcall(callDetails);
+					} else {
+						dbHelper.updatecall(callDetails);
+					}
+
+
+					CallManagerHelper.setcalls(this);
+
+					setResult(RESULT_OK);
+					finish();
+
+				}
+
+
+			}
+
 		}
+
+
+
 		return super.onOptionsItemSelected(item);
 	}
 	

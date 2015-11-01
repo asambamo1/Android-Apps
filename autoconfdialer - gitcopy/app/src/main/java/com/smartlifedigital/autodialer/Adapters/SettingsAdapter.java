@@ -9,9 +9,6 @@ import android.widget.BaseAdapter;
 import com.smartlifedigital.autodialer.Models.FontAwesomeViewHolder;
 import com.smartlifedigital.autodialer.R;
 
-/**
- * Created by alexanderchiou on 10/31/15.
- */
 public class SettingsAdapter extends BaseAdapter{
     private String[] optionNames;
     private Context context;

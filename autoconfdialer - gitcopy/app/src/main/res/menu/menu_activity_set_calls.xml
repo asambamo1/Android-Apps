@@ -6,6 +6,6 @@
         android:id="@+id/action_save_call_details"
         android:orderInCategory="200"
         android:title="Save"
-        android:icon="@drawable/ic_menu_save"
+        android:icon="@drawable/save"
         app:showAsAction="always"/>
 </menu>

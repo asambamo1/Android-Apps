@@ -1,6 +1,8 @@
 package com.smartlifedigital.autodialer.Activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -21,11 +23,8 @@ import butterknife.BindString;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 
-/**
- * Created by alexanderchiou on 10/31/15.
- */
 public class SettingsActivity extends AppCompatActivity{
-    public static final String SUPPORT_EMAIL = "durdle@durdle.com";
+    public static final String SUPPORT_EMAIL = "aravind.arasam@gmail.com";
     public static final String REPO_URL = "https://github.com/asambamo1/Android-Apps";
 
     @Bind(R.id.coordinator_layout) CoordinatorLayout parent;
@@ -39,8 +38,12 @@ public class SettingsActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
+
+
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
 
         settingsOptions.setAdapter(new SettingsAdapter(this));
     }
@@ -62,7 +65,8 @@ public class SettingsActivity extends AppCompatActivity{
                 startActivity(Intent.createChooser(sendIntent, sendEmail));
                 return;
             case 2:
-                Uri uri =  Uri.parse("market://details?id=" + getApplicationContext().getPackageName());
+                //Uri uri =  Uri.parse("market://details?id=" + getApplicationContext().getPackageName());
+                Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=com.smartlifedigital.autodialer");
                 intent = new Intent(Intent.ACTION_VIEW, uri);
                 if (!(getPackageManager().queryIntentActivities(intent, 0).size() > 0))
                 {
@@ -73,9 +77,12 @@ public class SettingsActivity extends AppCompatActivity{
             case 3:
                 intent = new Intent(this, AboutMeActivity.class);
                 break;
+            /*case 3:
+                intent = new Intent(this, AboutMeActivity.class);
+                break;
             case 4:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(REPO_URL));
-                break;
+                break;*/
         }
         startActivity(intent);
     }

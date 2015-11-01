@@ -1,6 +1,8 @@
 package com.smartlifedigital.autodialer.Activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,9 +15,6 @@ import com.smartlifedigital.autodialer.R;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by alexanderchiou on 10/31/15.
- */
 public class AboutMeActivity extends AppCompatActivity {
     public static final String LINKEDIN_URL = "https://www.linkedin.com/pub/aravind-sambamoorthy/a6/280/12a";
     public static final String GITHUB_URL = "https://github.com/asambamo1";
@@ -26,6 +25,8 @@ public class AboutMeActivity extends AppCompatActivity {
         setContentView(R.layout.about_me);
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
     }
 
     @OnClick(R.id.linkedin)

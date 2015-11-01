@@ -93,7 +93,7 @@
 			android:layout_toRightOf="@+id/call_item_saturday"
 			android:layout_below="@+id/call_item_time"
 			android:layout_marginLeft="4dp"
-			android:text="♲"
+			android:text="⟳"
 			android:textAppearance="?android:attr/textAppearanceSmall" />
 
 		<ToggleButton

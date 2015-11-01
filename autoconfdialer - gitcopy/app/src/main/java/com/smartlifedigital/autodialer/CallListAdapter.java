@@ -27,11 +27,11 @@ public class CallListAdapter extends BaseAdapter {
 		mContext = context;
 		mCalls = calls;
 	}
-	
+
 	public void setcalls(List<Model> calls) {
 		mCalls = calls;
 	}
-	
+
 	@Override
 	public int getCount() {
 		if (mCalls != null) {
@@ -63,7 +63,7 @@ public class CallListAdapter extends BaseAdapter {
 			LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			view = inflater.inflate(R.layout.call_list_item, parent, false);
 		}
-		
+
 		Model model = (Model) getItem(position);
 
 		int hour = model.timeHour;
@@ -93,7 +93,7 @@ public class CallListAdapter extends BaseAdapter {
 
 		TextView txtTime = (TextView) view.findViewById(R.id.call_item_time);
 		txtTime.setText(aTime);
-		
+
 		TextView txtName = (TextView) view.findViewById(R.id.call_item_name);
 		txtName.setText(model.name);
 
