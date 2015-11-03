@@ -1,8 +1,11 @@
-package com.smartlifedigital.autodialer;
+package com.smartlifedigital.autodialer.Service;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+
+import com.smartlifedigital.autodialer.Activities.CallReminderScreenActivity;
+import com.smartlifedigital.autodialer.Helper.CallManagerHelper;
 
 
 public class CallSchedulerService extends Service {
@@ -23,7 +26,7 @@ public class CallSchedulerService extends Service {
 
 
 		try {
-			Intent callIntent = new Intent(getBaseContext(), CallReminderScreen.class);
+			Intent callIntent = new Intent(getBaseContext(), CallReminderScreenActivity.class);
 			callIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			callIntent.putExtras(intent);
 			getApplication().startActivity(callIntent);

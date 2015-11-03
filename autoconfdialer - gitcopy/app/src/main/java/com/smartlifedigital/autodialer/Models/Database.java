@@ -1,4 +1,4 @@
-package com.smartlifedigital.autodialer;
+package com.smartlifedigital.autodialer.Models;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 
-import com.smartlifedigital.autodialer.DBColumns.call;
+import com.smartlifedigital.autodialer.Models.DBColumns.call;
 
 import java.util.ArrayList;
 import java.util.List;

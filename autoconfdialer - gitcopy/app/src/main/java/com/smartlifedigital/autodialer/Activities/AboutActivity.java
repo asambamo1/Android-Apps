@@ -1,4 +1,4 @@
-package com.smartlifedigital.autodialer;
+package com.smartlifedigital.autodialer.Activities;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.smartlifedigital.autodialer.R;
+
 import butterknife.ButterKnife;
 
-public class About extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

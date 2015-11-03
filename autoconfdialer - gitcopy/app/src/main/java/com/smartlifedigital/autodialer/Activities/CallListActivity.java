@@ -1,4 +1,4 @@
-package com.smartlifedigital.autodialer;
+package com.smartlifedigital.autodialer.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,11 @@ import android.widget.ListView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.smartlifedigital.autodialer.Activities.SettingsActivity;
+import com.smartlifedigital.autodialer.Adapters.CallListAdapter;
+import com.smartlifedigital.autodialer.Helper.CallManagerHelper;
+import com.smartlifedigital.autodialer.Models.Database;
+import com.smartlifedigital.autodialer.Models.Model;
+import com.smartlifedigital.autodialer.R;
 
 import java.sql.Date;
 

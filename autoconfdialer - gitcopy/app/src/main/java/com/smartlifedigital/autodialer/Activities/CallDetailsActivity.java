@@ -1,4 +1,4 @@
-package com.smartlifedigital.autodialer;
+package com.smartlifedigital.autodialer.Activities;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -22,6 +22,10 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.rey.material.widget.Switch;
+import com.smartlifedigital.autodialer.Helper.CallManagerHelper;
+import com.smartlifedigital.autodialer.Models.Database;
+import com.smartlifedigital.autodialer.Models.Model;
+import com.smartlifedigital.autodialer.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

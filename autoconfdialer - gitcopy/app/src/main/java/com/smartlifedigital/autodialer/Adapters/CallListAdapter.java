@@ -1,4 +1,4 @@
-package com.smartlifedigital.autodialer;
+package com.smartlifedigital.autodialer.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,10 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import com.smartlifedigital.autodialer.Activities.CallListActivity;
+import com.smartlifedigital.autodialer.Models.Model;
+import com.smartlifedigital.autodialer.R;
 
 import java.util.List;
 

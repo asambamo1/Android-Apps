@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.smartlifedigital.autodialer.About;
 import com.smartlifedigital.autodialer.Adapters.SettingsAdapter;
 import com.smartlifedigital.autodialer.R;
 
@@ -55,7 +54,7 @@ public class SettingsActivity extends AppCompatActivity{
         switch (position)
         {
             case 0:
-                intent = new Intent(this, About.class);
+                intent = new Intent(this, AboutActivity.class);
                 break;
             case 1:
                 String uriText = "mailto:" + SUPPORT_EMAIL + "?subject=" + Uri.encode(feedbackSubject);

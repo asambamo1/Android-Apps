@@ -1,4 +1,4 @@
-package com.smartlifedigital.autodialer;
+package com.smartlifedigital.autodialer.Helper;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
@@ -6,6 +6,10 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+
+import com.smartlifedigital.autodialer.Models.Database;
+import com.smartlifedigital.autodialer.Models.Model;
+import com.smartlifedigital.autodialer.Service.CallSchedulerService;
 
 import java.util.Calendar;
 import java.util.List;

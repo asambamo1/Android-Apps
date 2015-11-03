@@ -1,4 +1,4 @@
-package com.smartlifedigital.autodialer;
+package com.smartlifedigital.autodialer.Activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,7 +18,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class CallReminderScreen extends Activity {
+import com.smartlifedigital.autodialer.Helper.CallManagerHelper;
+import com.smartlifedigital.autodialer.R;
+
+public class CallReminderScreenActivity extends Activity {
 	
 	public final String TAG = this.getClass().getSimpleName();
 
@@ -41,6 +44,7 @@ public class CallReminderScreen extends Activity {
 		final String tone = getIntent().getStringExtra(CallManagerHelper.TONE);
 
 
+		//time in 12 hour format
 		int hour = timeHour;
 		int minutes = timeMinute;
 		String timeSet = "";
