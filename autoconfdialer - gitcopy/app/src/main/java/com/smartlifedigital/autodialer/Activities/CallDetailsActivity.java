@@ -211,14 +211,6 @@ public class CallDetailsActivity extends AppCompatActivity {
 					Snackbar.make(view, "911 Calls are not allowed!", Snackbar.LENGTH_LONG).show();
 				}
 
-				else if(callDetails.isEnabled){
-
-					View view = findViewById(android.R.id.content);
-					Snackbar.make(view, "Duplicate Call!", Snackbar.LENGTH_LONG).show();
-
-				}
-
-
 				else{
 
 					updateModelFromLayout();
