@@ -9,9 +9,7 @@ import com.smartlifedigital.autodialer.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by alexanderchiou on 10/31/15.
- */
+
 public class FontAwesomeViewHolder
 {
     @Bind(R.id.item_icon) public FontAwesomeText itemIcon;
